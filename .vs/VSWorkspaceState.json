@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MemRise"
+    "\\MemRise",
+    "\\MemRise\\css",
+    "\\packages"
   ],
-  "SelectedNode": "\\MemRise\\signin.aspx",
+  "SelectedNode": "\\MemRise\\home.aspx",
   "PreviewInSolutionExplorer": false
 }

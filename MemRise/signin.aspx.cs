@@ -53,7 +53,7 @@ namespace MemRise
                     {
                         // Đăng nhập thành công
                         Session["email"] = email;
-                        Response.Redirect("signup.aspx");
+                        Response.Redirect("home.aspx");
                     }
                     else
                     {

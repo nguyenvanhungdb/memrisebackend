@@ -400,18 +400,20 @@ main .container {
     color: #5a4b0e;
     font-weight: 700;
 }
+/* footer */
 footer {
     background-color: #2b3648;
     color: #bfbfbf;
     padding: 40px 0 24px;
     user-select: none;
 }
-footer .container {
-    max-width: 1100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
+    footer .container {
+        max-width: 1100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 /*.footer-logo {
     color: #dbb523;
     font-weight: 900;
@@ -421,11 +423,12 @@ footer .container {
     user-select: none;
 } */
 .logo-img-footer {
-    width: 100px;  
-    height: 100px; 
-    object-fit: contain; 
-    margin-bottom: 0.8rem; 
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 0.8rem;
 }
+
 .footer-btn-start {
     background-color: #dbb523;
     border: none;
@@ -440,33 +443,38 @@ footer .container {
     margin-bottom: 20px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.footer-btn-start:hover {
-    background-color: #f1ce4a;
-    box-shadow: 0 4px 10px rgb(241 206 74 / 0.7);
-}
+
+    .footer-btn-start:hover {
+        background-color: #f1ce4a;
+        box-shadow: 0 4px 10px rgb(241 206 74 / 0.7);
+    }
+
 .social-icons {
     display: flex;
     gap: 16px;
     margin-bottom: 28px;
 }
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    background-color: transparent;
-    border: 1.5px solid #dbb523;
-    color: #dbb523;
-    font-size: 18px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    user-select: none;
-}
-.social-icons a:hover {
-    background-color: #dbb523;
-    color: #1c2833;
-}
+
+    .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        background-color: transparent;
+        border: 1.5px solid #dbb523;
+        color: #dbb523;
+        font-size: 18px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        user-select: none;
+    }
+
+        .social-icons a:hover {
+            background-color: #dbb523;
+            color: #1c2833;
+        }
+
 .footer-links-wrapper {
     display: flex;
     justify-content: space-between;
@@ -479,22 +487,26 @@ footer .container {
     margin-bottom: 18px;
     user-select: none;
 }
+
 .footer-links-column {
     display: flex;
     flex-direction: column;
     gap: 10px;
     min-width: 160px;
 }
-.footer-links-column a {
-    color: inherit;
-    font-weight: 400;
-    transition: color 0.3s ease;
-    cursor: pointer;
-    white-space: nowrap;
-}
-.footer-links-column a:hover {
-    color: #dbb523;
-}
+
+    .footer-links-column a {
+        color: inherit;
+        font-weight: 400;
+        transition: color 0.3s ease;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+        .footer-links-column a:hover {
+            color: #dbb523;
+        }
+
 .footer-terms {
     width: 100%;
     text-align: center;
@@ -504,68 +516,86 @@ footer .container {
     padding-top: 18px;
     user-select: none;
 }
-.footer-terms a {
-    margin: 0 8px;
-    color: #6e7b8a;
-    text-decoration: underline;
-    cursor: pointer;
-    user-select: none;
-    transition: color 0.3s ease;
-}
-.footer-terms a:hover {
-    color: #dbb523;
-}
+
+    .footer-terms a {
+        margin: 0 8px;
+        color: #6e7b8a;
+        text-decoration: underline;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.3s ease;
+    }
+
+        .footer-terms a:hover {
+            color: #dbb523;
+        }
+
 @media (max-width: 1024px) {
     main .container {
         flex-direction: column;
         align-items: center;
     }
+
     .hero-content {
         max-width: 100%;
         margin-right: 0;
         margin-bottom: 36px;
         text-align: center;
     }
+
     .hero-news-card {
         width: 100%;
         max-width: 480px;
     }
+
     .filters {
         justify-content: center;
     }
+
     .footer-links-wrapper {
         justify-content: center;
         gap: 28px 48px;
     }
 }
+
 @media (max-width: 480px) {
     header {
         padding: 12px 20px;
     }
+
     .btn-start {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
+
     .hero-title {
         font-size: 2rem;
     }
+
     .hero-desc {
         font-size: 0.95rem;
     }
+
     .hero-news-card {
         max-width: 100%;
         width: 100%;
     }
+
     .blog-card {
         min-height: 340px;
     }
+
     .blog-img-container {
         height: 140px;
     }
+
     .footer-links-wrapper {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 }
+
+
+
 
