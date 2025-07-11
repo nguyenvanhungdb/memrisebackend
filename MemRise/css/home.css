@@ -371,6 +371,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    width:fit-content;
 }
 
 .block-introduce-wrap {
@@ -1056,6 +1057,7 @@ hr {
 .item-body-advice-right p {
     font-family: sans-serif;
     font-size: 20px;
+    width:300px;
 }
 
 .item-body-advice-right button {
@@ -1495,3 +1497,8 @@ a.menu-link {
         color: #ffd700; /* hoặc màu bạn muốn khi hover */
     }
 
+    @media screen and (max-width:1400px){
+        body{
+            width:1400px;
+        }
+    }

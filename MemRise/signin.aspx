@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Đăng nhập</title>
-    <link rel="stylesheet" href="css/signin.css" />
+    <link rel="stylesheet" href="css/signin.css?v=1.2" />
 </head>
 <body>
   <form id="form1" runat="server">

@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="UTF-8" />
     <title>Đăng ký</title>
-    <link rel="stylesheet" href="css/signup.css" />
+    <link rel="stylesheet" href="css/signup.css?v1.2" />
 </head>
 <body>
     <form id="form1" runat="server">
