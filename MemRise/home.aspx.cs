@@ -18,9 +18,17 @@ namespace MemRise
             Response.Redirect("signin.aspx");
         }
         
+        
         protected void btnStartCourse_Click(object sender, EventArgs e)
         {
-            Response.Redirect("4level.aspx"); 
+            if (Session["email"] == null)
+            {
+                Response.Redirect("signin.aspx");
+            }
+            else
+            {
+                Response.Redirect("course.aspx");
+            }
         }
 
         protected void btnCourses_Click(object sender, EventArgs e)
@@ -40,12 +48,26 @@ namespace MemRise
 
         protected void btnStartLearning_Click(object sender, EventArgs e)
         {
-            Response.Redirect("4level.aspx"); 
+            if (Session["email"] == null)
+            {
+                Response.Redirect("signin.aspx");
+            }
+            else
+            {
+                Response.Redirect("course.aspx");
+            }
         }
 
         protected void btnBeginCourse_Click(object sender, EventArgs e)
         {
-            Response.Redirect("4level.aspx"); 
+            if (Session["email"] == null)
+            {
+                Response.Redirect("signin.aspx");
+            }
+            else
+            {
+                Response.Redirect("course.aspx");
+            }
         }
 
     }

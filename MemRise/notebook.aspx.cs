@@ -58,7 +58,14 @@ namespace MemRise
 
         protected void btnCourse_Click(object sender, EventArgs e)
         {
-            Response.Redirect("course.aspx");
+            if (Session["email"] == null)
+            {
+                Response.Redirect("signin.aspx");
+            }
+            else
+            {
+                Response.Redirect("course.aspx");
+            }
         }
         protected void btnBlog_Click(object sender, EventArgs e)
         {
@@ -66,7 +73,14 @@ namespace MemRise
         }
         protected void btnStart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("course.aspx");
+            if (Session["email"] == null)
+            {
+                Response.Redirect("signin.aspx");
+            }
+            else
+            {
+                Response.Redirect("course.aspx");
+            }
         }
     }
 }

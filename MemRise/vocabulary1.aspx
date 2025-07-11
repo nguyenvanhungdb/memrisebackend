@@ -16,7 +16,10 @@
       <img class="logo" src="images/logo.jpg" alt="Logo">
 	</div>
     <nav class="buttons" aria-label="Primary navigation">
-      <asp:Button ID="btnTrangChu" runat="server" Text="Trang chủ" CssClass="footer-btn-start" OnClick="btnTrangChu_Click" />
+      <asp:Button ID="btnCourse" runat="server" Text="Khóa học" CssClass="login-button" OnClick="btnCourse_Click" />
+      <asp:Button ID="btnBlog" runat="server" Text="Blog" CssClass="login-button" OnClick="btnBlog_Click" />
+      <asp:Button ID="btnSen" runat="server" Text="Mẫu câu thông dụng" CssClass="login-button" OnClick="btnSen_Click" />
+      <asp:Button ID="btnTrangChu" runat="server" Text="Trang chủ" CssClass="login-button" OnClick="btnTrangChu_Click" />
     </nav>
     
   </header>

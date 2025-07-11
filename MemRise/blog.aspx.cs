@@ -11,7 +11,7 @@ namespace MemRise
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -23,7 +23,14 @@ namespace MemRise
         }
         protected void btnStart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("course.aspx");
+            if (Session["email"] == null)
+            {
+                Response.Redirect("signin.aspx");
+            }
+            else
+            {
+                Response.Redirect("course.aspx");
+            }
         }
     }
 }

@@ -34,6 +34,15 @@ namespace MemRise
         {
             Response.Redirect("blog.aspx");
         }
+        protected void btnSen_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("notebook.aspx");
+        }
+        protected void btnCourse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("course.aspx");
+        }
+        
         private void LoadVocabulary()
         {
             // Lấy chuỗi kết nối từ Web.config

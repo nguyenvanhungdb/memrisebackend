@@ -20,7 +20,14 @@ namespace MemRise
 
         protected void btnHocToeic_Click(object sender, EventArgs e)
         {
-            Response.Redirect("4level.aspx");
+            if (Session["email"] == null)
+            {
+                Response.Redirect("signin.aspx");
+            }
+            else
+            {
+                Response.Redirect("4level.aspx");
+            }
         }
         protected void btnKhoaHoc_Click(object sender, EventArgs e)
         {
