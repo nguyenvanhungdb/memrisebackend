@@ -13,5 +13,17 @@ namespace MemRise
         {
 
         }
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("signin.aspx");
+        }
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("home.aspx");
+        }
+        protected void btnStart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("course.aspx");
+        }
     }
 }

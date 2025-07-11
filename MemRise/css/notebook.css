@@ -210,6 +210,9 @@ strong {
     transition: background-color 0.3s ease;
     padding-left: 3rem;
     min-height: 3rem;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
 }
 
 .search-icon {
@@ -573,4 +576,34 @@ footer {
     cursor: pointer;
     display: inline-block;
     text-align: center;
+}
+
+.data-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+    .data-table th, .data-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+.search-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+.search-button {
+    padding: 6px 12px;
+    margin-left: 5px;
+}
+
+.message-label {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
 }

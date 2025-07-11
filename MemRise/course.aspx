@@ -93,9 +93,11 @@
         </section>
       </aside>
       <section class="courses" aria-label="Danh sách các khóa học hàng đầu">
-        <article class="course-card" tabindex="0" aria-label="Khóa học 400 Words of TOEFL - Intermediate, 2.1 triệu lượt học, 7 giờ">
+
+        <asp:LinkButton ID="btnHocToeic" runat="server" CssClass="course-card" OnClick="btnHocToeic_Click">
+        <article tabindex="0" aria-label="Từ vựng TOEIC quan trọng cấp I, 100 ngàn lượt học, 13 giờ" >
           <div class="course-image">
-            <img src="images/course_1.jpg" 
+            <img src="images/Toeic.png" 
                  alt="Ảnh 1" 
                  onerror="this.style.backgroundColor='#777'; this.alt='Image failed to load: Young woman reading book in a sunlit green park with friends in background'"/>
           </div>
@@ -105,7 +107,7 @@
               Tiếng Anh
               <span class="course-level" aria-hidden="true">bởi Decks</span>
             </div>
-            <div class="course-title">400 Words of TOEFL - Intermediate</div>
+            <div class="course-title">Khóa học từ vựng TOEIC quan trọng</div>
             <div class="course-stats" aria-label="Lượt học và thời gian hoàn thành khóa học">
               <div aria-label="2.1 triệu lượt học">
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12c2 0 3.999-1.5 4-4s-2-4-4-4-4 1.5-4 4 2 4 4 4zm0 2c-3 0-8 1.5-8 4.5v2.5h16v-2.5c0-3-5-4.5-8-4.5z"/></svg>
@@ -118,6 +120,7 @@
             </div>
           </div>
         </article>
+        </asp:LinkButton>
 
         <article class="course-card" tabindex="0" aria-label="Khóa học SAT Comprehensive, 390 ngàn lượt học, 78 giờ">
           <div class="course-image">
@@ -178,9 +181,9 @@
           </div>
         </article>
 
-        <article class="course-card" tabindex="0" aria-label="Từ vựng TOEIC quan trọng cấp I, 100 ngàn lượt học, 13 giờ">
+        <article class="course-card" tabindex="0" aria-label="Khóa học 400 Words of TOEFL - Intermediate, 2.1 triệu lượt học, 7 giờ">
           <div class="course-image">
-            <img src="images/Toeic.png" 
+            <img src="images/course_1.jpg"
                  alt="Ảnh 4" 
                  onerror="this.style.backgroundColor='#777'; this.alt=''"/>
           </div>
@@ -190,7 +193,7 @@
               Tiếng Anh
               <span class="course-level" aria-hidden="true">bởi Thầy...</span>
             </div>
-            <div class="course-title">Từ Vựng TOEIC Quan Trọng Cấp I</div>
+            <div class="course-title">Khóa học 400 Words of TOEFL - Intermediate</div>
             <div class="course-stats" aria-label="Lượt học và thời gian hoàn thành khóa học">
               <div aria-label="100 ngàn lượt học">
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12c2 0 3.999-1.5 4-4s-2-4-4-4-4 1.5-4 4 2 4 4 4zm0 2c-3 0-8 1.5-8 4.5v2.5h16v-2.5c0-3-5-4.5-8-4.5z"/></svg>

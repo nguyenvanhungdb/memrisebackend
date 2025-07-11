@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>Học từ vựng</title>
-    <link rel="stylesheet" href="css/learn.css" />
+    <link rel="stylesheet" href="css/learn.css?v=1.2" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -22,7 +22,7 @@
     </nav>
 </header>
       <br />
-
+      <div class="wrapper">
     <div class="progress-wrapper" aria-label="Quiz progress">
   <div class="progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100">
     <div id="progressFill" class="progress-fill" style="width: <%= progressWidth %>%;"></div>
@@ -34,7 +34,7 @@
 
 </div>
 
-
+      <div class="wrapper">
       <main class="main-content">
         <p id="lblInstruction" runat="server" class="instruction">Pick the correct answer</p>
 
@@ -53,7 +53,7 @@
 
 <asp:Label ID="lblResult" runat="server" CssClass="result-label" Text=""></asp:Label> <br />
 <asp:Button ID="btnRestart" runat="server" Text="Làm bài test khác" CssClass="restart-button" OnClick="btnRestart_Click" Visible="false" />
-
+    </div>
     </div>
   </form>
 </body>

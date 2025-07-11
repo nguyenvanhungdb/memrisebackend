@@ -4,138 +4,115 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Từ vựng cấp 1</title>
-    <link rel="stylesheet" href="css/vocabulary1.css">
+    <title>Từ vựng Toeic cấp I</title>
+    <link rel="stylesheet" href="css/vocabulary1.css?v=1.2" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <header>
-    <div class="logo">MEM<br>RISE</div>
-    <nav>
-      <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Khóa học</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><img src="images/avatar.jpg" alt="User" class="avatar"></li>
-      </ul>
+    <div>
+      <img class="logo" src="images/logo.jpg" alt="Logo">
+	</div>
+    <nav class="buttons" aria-label="Primary navigation">
+      <asp:Button ID="btnTrangChu" runat="server" Text="Trang chủ" CssClass="footer-btn-start" OnClick="btnTrangChu_Click" />
     </nav>
+    
   </header>
-
-  <section class="course-info">
-    <img src="images/Toeic.png" alt="TOEIC" class="course-img">
-    <div class="course-text">
-      <h2>Từ vựng TOEIC quan trọng - Cấp 1</h2>
-      <p>Những từ vựng mà ai cũng phải biết khi bắt đầu học TOEIC. Hãy bắt đầu học ngay hôm nay !</p>
-    </div>
-  </section>
-
-  <main>
-    <section class="words-section">
-      <div class="words-header">
-        <h3>500 words to learn</h3>
-        <input type="text" placeholder="Search word...">
-        <button class="learn-btn">Learn</button>
-      </div>
-
-      <table class="word-table">
-        <tr><th>new</th><td>mới</td></tr>
-        <tr><th>company</th><td>công ty</td></tr>
-        <tr><th>Mr.</th><td>ông</td></tr>
-        <tr><th>year</th><td>năm</td></tr>
-        <tr><th>service</th><td>dịch vụ</td></tr>
-        <tr><th>please</th><td>vui lòng</td></tr>
-        <tr><th>customer</th><td>khách hàng</td></tr>
-        <tr><th>work</th><td>làm việc / công việc</td></tr>
-        <tr><th>book</th><td>quyển sách</td></tr>
-        <tr><th>pen</th><td>bút</td></tr>
-        <tr><th>apple</th><td>quả táo</td></tr>
-        <tr><th>school</th><td>trường học</td></tr>
-        <tr><th>teacher</th><td>giáo viên</td></tr>
-        <tr><th>student</th><td>học sinh</td></tr>
-        <tr><th>cat</th><td>con mèo</td></tr>
-        <tr><th>dog</th><td>con chó</td></tr>
-        <tr><th>milk</th><td>sữa</td></tr>
-        <tr><th>sun</th><td>mặt trời</td></tr>
-        <tr><th>fish</th><td>cá</td></tr>
-        <tr><th>bird</th><td>chim</td></tr>
-        <tr><th>water</th><td>nước</td></tr>
-        <tr><th>banana</th><td>chuối</td></tr>
-        <tr><th>car</th><td>xe hơi</td></tr>
-        <tr><th>bike</th><td>xe đạp</td></tr>
-        <tr><th>house</th><td>ngôi nhà</td></tr>
-        <tr><th>door</th><td>cánh cửa</td></tr>
-        <tr><th>chair</th><td>ghế</td></tr>
-        <tr><th>table</th><td>bàn</td></tr>
-        <tr><th>happy</th><td>vui vẻ</td></tr>
-        <tr><th>sad</th><td>buồn</td></tr>
-        <tr><th>big</th><td>to, lớn</td></tr>
-        <tr><th>small</th><td>nhỏ</td></tr>
-        <tr><th>hot</th><td>nóng</td></tr>
-        <tr><th>cold</th><td>lạnh</td></tr>
-        <tr><th>run</th><td>chạy</td></tr>
-        <tr><th>jump</th><td>nhảy</td></tr>
-        <tr><th>sleep</th><td>ngủ</td></tr>
-        <tr><th>eat</th><td>ăn</td></tr>
-        <tr><th>star</th><td>ngôi sao</td></tr>
-        <tr><th>water</th><td>nước</td></tr>
-        <tr><th>food</th><td>thức ăn</td></tr>
-        <tr><th>house</th><td>nhà</td></tr>
-        <tr><th>car</th><td>xe hơi</td></tr>
-        <tr><th>bike</th><td>xe đạp</td></tr>
-        <tr><th>table</th><td>bàn</td></tr>
-        <tr><th>chair</th><td>ghế</td></tr>
-        <tr><th>friend</th><td>bạn</td></tr>
-        <tr><th>name</th><td>tên</td></tr>
-        <tr><th>family</th><td>gia đình</td></tr>
-        <tr><th>father</th><td>bố</td></tr>
-        <tr><th>mother</th><td>mẹ</td></tr>
-        <tr><th>baby</th><td>em bé</td></tr>
-        <tr><th>boy</th><td>con trai</td></tr>
-        <tr><th>girl</th><td>con gái</td></tr>
-        <tr><th>happy</th><td>vui</td></tr>
-        <tr><th>sad</th><td>buồn</td></tr>
-      </table>
-
-      <div class="more-link">
-        <a href="#" onclick="return false;">Xem thêm...</a>
-      </div>
-    </section>
-  </main>
-  
-
-  <footer class="footer">
-  <div class="footer-container">
-    <div class="logo">MEM<br>RISE</div> <br>
-
-    <div class="footer-links">
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Jobs</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">Memrise Blog</a></li>
-        <li><a href="#">Engineering Blog</a></li>
-        <li><a href="#">Press</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">FAQ & Help</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">Phrasebooks</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-bottom">
-      <a href="#"><img src="images/icon-home.png" alt="">Terms of Use</a>
-      <a href="#"><img src="images/icon-mailbox.png" alt="">Privacy Policy</a>
-      <a href="#"><img src="images/icon-heart.png" alt="">Cookie Policy</a>
-    </div>
-  </div>
-</footer>
+<section class="hero" aria-labelledby="hero-title" role="region">
+    <div class="hero-content">
+        <h2>📚 Từ vựng Toeic cấp I</h2>
+        <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+            <a href="#">Học Tiếng Anh</a>
+            <span class="separator" aria-hidden="true"> > </span>
+            <a href="#">Khóa học Tiếng Anh</a>
+            <span class="separator" aria-hidden="true"> > </span>
+            <a href="#">Từ vựng Toeic cấp I</a>
+        </nav>
+        <div class="hero-main-flex-container"> <div class="hero-flag-wrapper">
+              <img src="images/img-flag.png" alt="Flag of United Kingdom" class="hero-flag" />
+            </div>
+            <div class="hero-text-content">
+                <h1 id="hero-title" class="hero-title">Từ vựng Toeic cấp I</h1>
+                <p class="hero-subtitle">Học tiếng Anh các cấp độ cùng Memrise.</p>
+            </div>
         </div>
+        </div>
+  </section>
+    <div class="sticky-header-wrapper">
+        <section class="search-container" aria-label="Search English or Vietnamese words">
+            <div class="search-wrapper">
+
+    <asp:Button ID="btnLearn" runat="server" Text="Làm bài test" CssClass="test-btn" OnClick="btnLearn_Click" /> 
+
+                
+            </div>
+        </section>
+       
+
+            <asp:GridView ID="gvWord" runat="server" AutoGenerateColumns="true" CssClass="vocab-grid"></asp:GridView>
+
+        
+
+    <footer role="contentinfo">
+    <div class="container">
+      <img class="logo-img-footer" src="images/logo.jpg" alt="Logo"> 
+      <asp:Button ID="btnStartFooter" runat="server" Text="Bắt đầu học" CssClass="footer-btn-start" OnClick="btnStart_Click" /> <br /> 
+      <nav aria-label="Social media links" class="social-icons">
+        <a href="#" aria-label="Facebook" tabindex="0" title="Facebook" rel="noopener noreferrer" target="_blank">
+          <svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.342v21.317c0 .742.6 1.341 1.325 1.341h11.536v-9.295H9.911v-3.622h2.95V8.41c0-2.92 1.783-4.512 4.388-4.512 1.246 0 2.315.092 2.626.134v3.04h-1.798c-1.41 0-1.684.67-1.684 1.655v2.168h3.363l-.44 3.622h-2.923V24h5.736c.725 0 1.325-.6 1.325-1.341V1.342C24 .6 23.4 0 22.675 0z" /></svg>
+        </a>
+        <a href="#" aria-label="Twitter" tabindex="0" title="Twitter" rel="noopener noreferrer" target="_blank">
+          <svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M23.954 4.569a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.388 4.482c-4.083-.195-7.702-2.159-10.126-5.134a4.822 4.822 0 0 0-.663 2.475c0 1.708.87 3.214 2.188 4.099a4.904 4.904 0 0 1-2.229-.616v.06a4.936 4.936 0 0 0 3.946 4.833 4.9 4.9 0 0 1-2.224.084c.623 1.946 2.444 3.362 4.604 3.403a9.868 9.868 0 0 1-6.102 2.104c-.396 0-.787-.023-1.17-.069a13.978 13.978 0 0 0 7.557 2.212c9.054 0 14.002-7.496 14.002-13.985 0-.208 0-.423-.015-.633a9.936 9.936 0 0 0 2.457-2.548l-.047-.02z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" tabindex="0" title="YouTube" rel="noopener noreferrer" target="_blank">
+          <svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M10 15L15 12 10 9v6zm12-3c0-1.104-.896-2-2-2h-2.419l-.548-2.683C17.007 6.572 16.319 6 15.5 6h-7c-.819 0-1.507.572-1.533 1.317L6.419 10H4a2 2 0 0 0-2 2c0 1.104.896 2 2 2h2.419l.548 2.683c.026.746.714 1.317 1.533 1.317h7c.819 0 1.507-.571 1.533-1.317L17.581 14H20c1.104 0 2-.896 2-2z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" tabindex="0" title="Instagram" rel="noopener noreferrer" target="_blank">
+          <svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+        </a>
+      </nav>
+
+      <div class="footer-links-wrapper" aria-label="Footer navigation links">
+        <div class="footer-links-column" role="navigation" aria-labelledby="footer-col-1">
+          <h3 id="footer-col-1" class="sr-only">Information</h3>
+          <a href="#">Giới thiệu</a>
+          <a href="#">Liên hệ</a>
+          <a href="#">Câu hỏi thường gặp & Trợ giúp</a>
+          <a href="#">Ứng dụng trên thiết bị di động</a>
+          <a href="#">Các gói đăng ký</a>
+          <a href="#">Đội ngũ</a>
+          <a href="#">Blog Memrise</a>
+          <a href="#">Blog Kỹ thuật lập trình</a>
+        </div>
+        <div class="footer-links-column" role="navigation" aria-labelledby="footer-col-2">
+          <h3 id="footer-col-2" class="sr-only">Courses</h3>
+          <a href="#">Học kĩ năng Listening</a>
+          <a href="#">Học kĩ năng Reading</a>
+          <a href="#">Học kĩ năng giao tiếp</a>
+        </div>
+        <div class="footer-links-column" role="navigation" aria-labelledby="footer-col-3">
+          <h3 id="footer-col-3" class="sr-only">Course categories</h3>
+          <a href="#">Khoá Học cơ bản</a>
+          <a href="#">Khoá Học trung cấp</a>
+          <a href="#">Khoá Học nâng cao</a>
+        </div>
+        <div class="footer-links-column" role="navigation" aria-labelledby="footer-col-4">
+          <h3 id="footer-col-4" class="sr-only">Word clusters</h3>
+          <a href="#">Số cụm từ, thành ngữ tiếng Anh</a>
+          <a href="#">Số cụm từ tiếng Anh thông dụng</a>
+          <a href="#">Số mẫu câu giao tiếp tiếng Anh</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <a href="#" tabindex="0">Điều Khoản Sử Dụng</a> | 
+        <a href="#" tabindex="0">Chính Sách Bảo Mật</a> | 
+        <a href="#" tabindex="0">Chính sách Cookie</a>
+      </div>
+    </div>
+  </footer>
     </form>
 </body>
 </html>

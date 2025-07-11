@@ -49,7 +49,7 @@ namespace MemRise
         }
         protected void btn4level_Click(object sender, EventArgs e)
         {
-            Response.Redirect("4level.aspx");
+            Response.Redirect("course.aspx");
         }
     }
 }

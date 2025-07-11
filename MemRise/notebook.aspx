@@ -16,26 +16,28 @@
       <img class="logo" src="images/logo.jpg" alt="Logo">
 	</div>
     <nav class="buttons" aria-label="Primary navigation">
-      <asp:Button ID="btnLogin" runat="server" Text="Đăng Nhập" CssClass="login-button" OnClick="btnLogin_Click" />
-      <asp:Button ID="btnStartHeader" runat="server" Text="Bắt Đầu Học" CssClass="footer-btn-start" OnClick="btnStart_Click" />
+      <asp:Button ID="btnBlog" runat="server" Text="Blog" CssClass="login-button" OnClick="btnBlog_Click" />
+      <asp:Button ID="btnCourse" runat="server" Text="Các khóa học" CssClass="login-button" OnClick="btnCourse_Click" />
+      <asp:Button ID="btnTrangChu" runat="server" Text="Trang chủ" CssClass="footer-btn-start" OnClick="btnTrangChu_Click" />
     </nav>
     
   </header>
 <section class="hero" aria-labelledby="hero-title" role="region">
     <div class="hero-content">
+        <h2>📚 Mẫu câu tiếng Anh thông dụng</h2>
         <nav class="hero-breadcrumb" aria-label="Breadcrumb">
             <a href="#">Học Tiếng Anh</a>
             <span class="separator" aria-hidden="true"> > </span>
             <a href="#">Khóa học Tiếng Anh</a>
             <span class="separator" aria-hidden="true"> > </span>
-            <a href="#">Sổ cụm từ thông dụng Tiếng Anh</a>
+            <a href="#">Mẫu câu tiếng Anh thông dụng</a>
         </nav>
         <div class="hero-main-flex-container"> <div class="hero-flag-wrapper">
               <img src="images/img-flag.png" alt="Flag of United Kingdom" class="hero-flag" />
             </div>
             <div class="hero-text-content">
-                <h1 id="hero-title" class="hero-title">Sổ cụm từ thông dụng tiếng Anh</h1>
-                <p class="hero-subtitle">Tìm kiếm các từ và mẫu câu tiếng Anh bạn sẽ học cùng Memrise. Nhấn vào một từ để xem <strong><a href="#">các video và audio của người bản ngữ.</a></strong></p>
+                <h1 id="hero-title" class="hero-title">Mẫu câu tiếng Anh thông dụng</h1>
+                <p class="hero-subtitle">Tìm kiếm các từ và mẫu câu tiếng Anh thông dụng bạn sẽ học cùng Memrise</p>
             </div>
         </div>
         </div>
@@ -49,60 +51,15 @@
                 
             </div>
         </section>
+        <asp:Label ID="lblMessage" runat="server" CssClass="message-label" ForeColor="Red"></asp:Label>
 
-
-        <section class="table-wrapper" aria-label="Table of English common phrases and Vietnamese translations">
-            <div class="language-tabs" role="radiogroup" aria-label="Language selection">
-                <div class="language-tab">
-                    <label for="lang-en" tabindex="0" class="active-language-tab">
-                        <img src="images/img-flag.png" alt="United Kingdom flag" class="flag-icon" />
-                        Tiếng Anh (Anh Quốc)
-                    </label>
-                </div>
-                <div class="language-tab">
-                    <label for="lang-vi" tabindex="0">
-                        <img src="images/img-vietnam-flag.png" alt="Vietnam flag" class="flag-icon" />
-                        Tiếng Việt
-                    </label>
-                </div>
-            </div>
-        </section>
-   </div> <section class="table-wrapper main-table-section" aria-label="Table of English common phrases and Vietnamese translations">
-    <asp:Table ID="wordTable" runat="server" CssClass="translation-table">
-
-    <asp:TableRow>
-        <asp:TableCell>apple</asp:TableCell>
-        <asp:TableCell>quả táo</asp:TableCell>
-    </asp:TableRow>
-
-    <asp:TableRow>
-        <asp:TableCell>book</asp:TableCell>
-        <asp:TableCell>quyển sách</asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-        <asp:TableCell>cat</asp:TableCell>
-        <asp:TableCell>con mèo</asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-        <asp:TableCell>dog</asp:TableCell>
-        <asp:TableCell>con chó</asp:TableCell>
-    </asp:TableRow>
-</asp:Table>
-
-
-    <nav class="pagination" aria-label="Pagination navigation">
-      <button aria-label="Previous page" disabled><</button>
-      <span class="page-num active-page" aria-current="page" tabindex="0">1</span>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-      <span aria-hidden="true">...</span>
-      <button>322</button>
-      <button aria-label="Next page">></button>
-    </nav>
-  </section>
-        </div>
+            <asp:GridView ID="gvSentences" runat="server" CssClass="data-table" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="EnglishSentence" HeaderText="English Sentence" />
+                    <asp:BoundField DataField="VietnameseTranslation" HeaderText="Vietnamese Translation" />
+                </Columns>
+            </asp:GridView>
+        
 
     <footer role="contentinfo">
     <div class="container">

@@ -160,15 +160,13 @@ header {
     box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
 }
 
-.answers {
+
+.answer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    max-width: 640px;
-    gap: 14px 24px;
-    margin-bottom: 30px;
-    padding: 0 12px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     width: 100%;
-    justify-items: center;
+    box-sizing: border-box;
 }
 
 .answer-btn {
@@ -447,6 +445,7 @@ form {
     max-width: 900px; /* Tăng chiều rộng khung nếu cần */
     margin: 20px auto;
     padding: 0 10px;
+
 }
 
 
@@ -588,7 +587,7 @@ form {
 
 
 .progress-container {
-    width: 50%;
+    width: 45%;
     margin: 0 auto;
     height: 20px;
     background-color: #e0e0e0;
@@ -628,4 +627,10 @@ form {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto; /* Căn giữa toàn bộ nội dung */
+    padding: 0 10px;
 }

@@ -17,8 +17,10 @@
         <img class="logo" src="images/logo.jpg" alt="Logo" />
       </div>
       <nav class="buttons" aria-label="Primary navigation">
-        <asp:HyperLink ID="lnkLogin" CssClass="login" NavigateUrl="#" runat="server">Đăng Nhập</asp:HyperLink>
-        <asp:HyperLink ID="lnkStart" CssClass="start" NavigateUrl="#" runat="server">Bắt Đầu Học</asp:HyperLink>
+        <asp:LinkButton ID="btnLogin" CssClass="login" runat="server" OnClick="btnLogin_Click">Đăng Nhập</asp:LinkButton>
+        <asp:LinkButton ID="btnHome" CssClass="login" runat="server" OnClick="btnHome_Click">Trang chủ</asp:LinkButton>
+        <asp:LinkButton ID="btnStart" CssClass="start" runat="server" OnClick="btnStart_Click">Bắt Đầu Học</asp:LinkButton>
+
       </nav>
     </header>
 

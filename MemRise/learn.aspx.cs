@@ -14,6 +14,7 @@ namespace MemRise
         private static int incorrectCount;
         private static Random random = new Random();
         public string progressWidth = "0";
+        private static List<VocabularyItem> fullWordList;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,25 +44,44 @@ namespace MemRise
         private void LoadQuizData()
         {
             quizList = new List<VocabularyItem>();
+            fullWordList = new List<VocabularyItem>();
             string connStr = ConfigurationManager.ConnectionStrings["MemriseDB"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
-                string query = "SELECT TOP 20 * FROM Vocabulary ORDER BY NEWID()";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
+                // Lấy toàn bộ danh sách cho việc chọn đáp án ngẫu nhiên
+                string allQuery = "SELECT * FROM Vocabulary";
+                SqlCommand allCmd = new SqlCommand(allQuery, conn);
+                SqlDataReader allReader = allCmd.ExecuteReader();
+
+                while (allReader.Read())
+                {
+                    fullWordList.Add(new VocabularyItem
+                    {
+                        Word = allReader["Word"].ToString(),
+                        Meaning = allReader["Meaning"].ToString()
+                    });
+                }
+                allReader.Close();
+
+                // Lấy 5 từ ngẫu nhiên cho quizList
+                string quizQuery = "SELECT TOP 10 * FROM Vocabulary ORDER BY NEWID()";
+                SqlCommand quizCmd = new SqlCommand(quizQuery, conn);
+                SqlDataReader quizReader = quizCmd.ExecuteReader();
+
+                while (quizReader.Read())
                 {
                     quizList.Add(new VocabularyItem
                     {
-                        Word = reader["Word"].ToString(),
-                        Meaning = reader["Meaning"].ToString()
+                        Word = quizReader["Word"].ToString(),
+                        Meaning = quizReader["Meaning"].ToString()
                     });
                 }
             }
         }
+
 
         private void UpdateProgress()
         {
@@ -73,10 +93,6 @@ namespace MemRise
 
         private void DisplayQuestion()
         {
-
-            
-
-            // Khi hết câu hỏi
             if (currentQuestionIndex >= quizList.Count)
             {
                 lblInstruction.Visible = false;
@@ -86,11 +102,8 @@ namespace MemRise
                 btnAns4.Visible = false;
                 btnNext.Visible = false;
 
+                lblQuestion.Text = $"🎉 Chúc mừng! Bạn đã hoàn thành bài test";
 
-                // ✅ Ẩn dòng "Pick a correct answer"
-                lblQuestion.Text = ""; // hoặc lblQuestion.Visible = false;
-
-                // ✅ Hiện kết quả
                 lblResult.Text = $"Số câu đúng: {correctCount}<br>Số câu sai: {incorrectCount}";
                 lblResult.Visible = true;
 
@@ -98,41 +111,33 @@ namespace MemRise
                 return;
             }
 
-
-
-            // Reset màu
             ResetAnswerStyles();
 
-            // Câu hiện tại
             var question = quizList[currentQuestionIndex];
             lblQuestion.Text = question.Word;
             ViewState["CorrectAnswer"] = question.Meaning;
 
             UpdateProgress();
 
-
-            // Tạo danh sách đáp án
             List<string> options = new List<string> { question.Meaning };
             while (options.Count < 4)
             {
-                var randomItem = quizList[random.Next(quizList.Count)];
+                var randomItem = fullWordList[random.Next(fullWordList.Count)];
                 if (!options.Contains(randomItem.Meaning))
                     options.Add(randomItem.Meaning);
             }
 
-            // Shuffle đáp án
             Shuffle(options);
 
-            // Gán đáp án
             btnAns1.Text = options[0];
             btnAns2.Text = options[1];
             btnAns3.Text = options[2];
             btnAns4.Text = options[3];
 
-            // Lưu vị trí đúng
             btnNext.Visible = false;
             EnableAnswerButtons(true);
         }
+
 
         protected void btnAns_Click(object sender, EventArgs e)
         {
@@ -209,28 +214,28 @@ namespace MemRise
             incorrectCount = 0;
 
             LoadQuizData();
-            DisplayQuestion();
 
-            // ✅ Ẩn kết quả cũ
+            // ✅ Hiện lại các thành phần cần thiết
             lblResult.Visible = false;
             btnRestart.Visible = false;
 
-            // ✅ Hiện lại vùng câu hỏi + 4 nút trả lời
             lblQuestion.Visible = true;
-            lblQuestion.Text = "Pick a correct answer"; // hoặc để rỗng nếu bạn không muốn hiện lại
+            lblInstruction.Visible = true; // Nếu có dòng "Pick a correct answer"
+
             btnAns1.Visible = true;
             btnAns2.Visible = true;
             btnAns3.Visible = true;
             btnAns4.Visible = true;
 
-            // ✅ Ẩn nút Next, bật lại chọn câu trả lời
             btnNext.Visible = false;
             EnableAnswerButtons(true);
 
-            // ✅ Cập nhật lại tiến độ
             UpdateProgress();
             lblProgressText.Text = $"1/{quizList.Count}";
+
+            DisplayQuestion(); // ✅ Quan trọng: phải gọi sau khi reset xong
         }
+
 
     }
 }

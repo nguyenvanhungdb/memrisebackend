@@ -1,57 +1,72 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MemRise
 {
     public partial class notebook : System.Web.UI.Page
     {
+        string connStr = ConfigurationManager.ConnectionStrings["MemriseDB"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                // Mặc định hiện tất cả hàng
-                foreach (TableRow row in wordTable.Rows)
-                {
-                    row.Visible = true;
-                }
+                LoadSentences();
             }
         }
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("signin.aspx");
-        }
 
-        protected void btnStart_Click(object sender, EventArgs e)
+        private void LoadSentences(string keyword = "")
         {
-            Response.Redirect("course.aspx");
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                string query = "SELECT EnglishSentence, VietnameseTranslation FROM NotebookSentences";
+
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    query += " WHERE LOWER(EnglishSentence) LIKE @keyword OR LOWER(VietnameseTranslation) LIKE @keyword";
+                }
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    cmd.Parameters.AddWithValue("@keyword", "%" + keyword.ToLower() + "%");
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                gvSentences.DataSource = dt;
+                gvSentences.DataBind();
+
+                lblMessage.Text = dt.Rows.Count == 0 ? "Không tìm thấy kết quả phù hợp." : "";
+            }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text.Trim().ToLower();
+            string keyword = txtSearch.Text.Trim();
+            LoadSentences(keyword);
+        }
 
-            foreach (TableRow row in wordTable.Rows)
-            {
-                // Bỏ qua dòng tiêu đề (nếu có)
-                if (row.Cells.Count == 0) continue;
+        protected void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("home.aspx");
+        }
 
-                TableCell cellTiengAnh = row.Cells[0];
-                string textTiengAnh = cellTiengAnh.Text.Trim().ToLower();
-
-                // So khớp keyword
-                if (textTiengAnh.Contains(keyword) || keyword == "")
-                {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = false;
-                }
-            }
+        protected void btnCourse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("course.aspx");
+        }
+        protected void btnBlog_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("blog.aspx");
+        }
+        protected void btnStart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("course.aspx");
         }
     }
 }
